@@ -44,7 +44,6 @@ export class LoginComponent implements OnInit {
       this.auth.logIn(this.loginForm.value)
         .subscribe({
           next: (res) => {
-            // alert(res.message)
             this.loginForm.reset();
             this.auth.storeToken(res.accessToken);
             this.auth.storeRefreshToken(res.refreshToken);
